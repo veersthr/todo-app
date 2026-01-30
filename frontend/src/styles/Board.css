@@ -1,0 +1,224 @@
+.board {
+  background: white;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  animation: boardSlideIn 0.4s ease-out;
+}
+
+@keyframes boardSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.board:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+.board.completed {
+  border-color: #4caf50;
+  background: linear-gradient(to bottom, #f1f8f4, white);
+}
+
+.board-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.board-title {
+  font-family: 'Crimson Pro', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.board-title:hover {
+  color: #000000;
+}
+
+.board-title.completed-text {
+  text-decoration: line-through;
+  opacity: 0.7;
+  color: #4caf50;
+}
+
+.board-title-input {
+  font-family: 'Crimson Pro', serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a1a;
+  border: 2px solid #000000;
+  border-radius: 8px;
+  padding: 4px 8px;
+  width: 100%;
+  background: #f8f9ff;
+}
+
+.board-title-input:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.board-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-button {
+  background: #f5f5f5;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-button:hover {
+  background: #e0e0e0;
+  transform: scale(1.1);
+}
+
+.icon-button.delete:hover {
+  background: #fee;
+  color: #c33;
+}
+
+.todos-container {
+  margin-bottom: 16px;
+  min-height: 60px;
+}
+
+.empty-message {
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+  padding: 20px;
+  font-style: italic;
+}
+
+.add-todo-form {
+  background: #f8f9ff;
+  padding: 16px;
+  border-radius: 12px;
+  border: 2px dashed #000000;
+}
+
+.add-todo-input {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: 'DM Sans', sans-serif;
+  margin-bottom: 12px;
+  transition: border-color 0.2s ease;
+}
+
+.add-todo-input:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.add-todo-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.add-todo-button {
+  flex: 1;
+  padding: 10px;
+  background: #000000;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.add-todo-button:hover {
+  background: #5568d3;
+}
+
+.cancel-todo-button {
+  flex: 1;
+  padding: 10px;
+  background: #f0f0f0;
+  color: #666;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cancel-todo-button:hover {
+  background: #e0e0e0;
+}
+
+.show-add-todo-button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #f8f9ff 0%, #e8eaff 100%);
+  color: #000000;
+  border: 2px dashed #000000;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: 'DM Sans', sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.show-add-todo-button:hover {
+  background: #000000;
+  color: white;
+  border-style: solid;
+}
+
+.completion-badge {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
